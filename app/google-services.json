@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922046733246",
+    "project_id": "make-chat-3f202",
+    "storage_bucket": "make-chat-3f202.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922046733246:android:be7d1bc97a803794c0b7ef",
+        "android_client_info": {
+          "package_name": "com.example.makechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922046733246-0iigd85i861ueeue8g3i0ufl36stll1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn9BcYTFf1AixoZfb34hoi2YIe3bOIP3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922046733246-0iigd85i861ueeue8g3i0ufl36stll1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
