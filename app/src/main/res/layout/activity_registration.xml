@@ -9,7 +9,7 @@
 
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgUser"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:scaleType="fitCenter"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtUser"
         app:layout_constraintVertical_bias="0.243" />
 
     <TextView
@@ -109,7 +109,7 @@
         app:layout_constraintVertical_bias="0.78" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtUser"
         android:layout_width="340dp"
         android:layout_height="53dp"
         android:ems="10"
@@ -126,7 +126,7 @@
         app:layout_constraintVertical_bias="0.529" />
 
     <EditText
-        android:id="@+id/edtEmail2"
+        android:id="@+id/edtEmailreg"
         android:layout_width="340dp"
         android:layout_height="53dp"
         android:ems="10"
@@ -143,7 +143,7 @@
         app:layout_constraintVertical_bias="0.691" />
 
     <EditText
-        android:id="@+id/edtpass"
+        android:id="@+id/edtpassreg"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -160,7 +160,7 @@
         app:layout_constraintVertical_bias="0.047" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonreg"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_45sdp"
         android:backgroundTint="@color/black"
@@ -174,7 +174,7 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <TextView
-        android:id="@+id/txtcreateAccount"
+        android:id="@+id/txtlogin"
         android:layout_width="@dimen/_118sdp"
         android:layout_height="@dimen/_26sdp"
         android:gravity="center"
