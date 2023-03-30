@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,12 +40,18 @@ public class registration extends AppCompatActivity {
       String imageUrl;
       FirebaseDatabase database;
       FirebaseStorage storage;
+      ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.setCancelable(false);
+
+        getSupportActionBar().hide();
         regUserName=findViewById(R.id.edtUser);
         regEmail=findViewById(R.id.edtEmailreg);
         regPass=findViewById(R.id.edtpassreg);
@@ -53,6 +61,7 @@ public class registration extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
         storage=FirebaseStorage.getInstance();
         auth=FirebaseAuth.getInstance();
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,20 +78,25 @@ public class registration extends AppCompatActivity {
                 String email=regEmail.getText().toString();
                 String pass=regPass.getText().toString();
                 String status="Hey, I am using Application";
-
+                progressDialog.show();
                 if(name.isEmpty()){
+                    progressDialog.dismiss();
                     regUserName.setError("Enter Name");
                 }
                 else if(email.isEmpty()){
+                    progressDialog.dismiss();
                     regEmail.setError("Enter Email");
                 }
                 else if(pass.isEmpty()){
+                    progressDialog.dismiss();
                     regPass.setError("Enter password");
                 }
                 else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    progressDialog.dismiss();
                     regEmail.setError("Enter Valid Email");
                 }
                 else if(pass.length()<6){
+                    progressDialog.dismiss();
                     regPass.setError("Enter password more than 6 letters");
                 }
                 else{
@@ -90,6 +104,7 @@ public class registration extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+
                                 String id=task.getResult().getUser().getUid();
                                 DatabaseReference reference=database.getReference().child("user").child(id);
                                 StorageReference storageReference=storage.getReference().child("Upload").child(id);
@@ -112,6 +127,7 @@ public class registration extends AppCompatActivity {
                                                                     finish();
                                                                 }
                                                                 else{
+                                                                    progressDialog.dismiss();
                                                                     Toast.makeText(registration.this, "Error in creating User", Toast.LENGTH_SHORT).show();
                                                                 }
 
@@ -126,6 +142,7 @@ public class registration extends AppCompatActivity {
                                 }
 
                                 else{
+                                    progressDialog.show();
                                     String status="Hey, I am using Application";
                                     imageUrl="https://firebasestorage.googleapis.com/v0/b/make-chat-3f202.appspot.com/o/man.png?alt=media&token=424a0a6d-efca-4065-a4e7-735dd657f68a";
                                     Users users=new Users(id,name,email,pass,imageUrl,status);
@@ -138,6 +155,7 @@ public class registration extends AppCompatActivity {
                                                 finish();
                                             }
                                             else{
+                                                progressDialog.dismiss();
                                                 Toast.makeText(registration.this, "Error in creating User", Toast.LENGTH_SHORT).show();
                                             }
 
@@ -148,6 +166,7 @@ public class registration extends AppCompatActivity {
                             }
 
                             else{
+                                progressDialog.dismiss();
                                 Toast.makeText(registration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
