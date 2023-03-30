@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="325dp"
+    android:layout_height="235dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_margin="13dp"
+    android:background="@drawable/shape_dialog">
+
+
+    <ImageView
+
+        android:id="@+id/imglogoutdialog"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logout"
+        android:layout_margin="13dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do really you want to\n log out?"
+        android:textSize="19dp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_regular"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="YES"
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:textSize="13dp"
+            />
+
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="No"
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:textSize="13dp"/>
+    </LinearLayout>
+
+</LinearLayout>
