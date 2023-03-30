@@ -3,6 +3,11 @@ package com.example.makechat;
 public class Users {
     String profilePic,mail,userName,password,userId,lastMessage,status;
 
+
+    public Users(){
+
+    }
+
     public Users(String id, String name, String email, String pass, String imageUrl, String status){
         this.userId=id;
         this.userName=name;

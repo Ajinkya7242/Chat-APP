@@ -23,7 +23,7 @@
            android:fontFamily="@font/poppins_bold"
            android:text="Make Chat"
            android:textColor="@color/black"
-           android:textSize="@dimen/_30sdp"
+           android:textSize="@dimen/_22sdp"
            android:textStyle="bold" />
 
        <ImageView
@@ -36,21 +36,21 @@
    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="384dp"
-        android:layout_height="357dp"
-        android:layout_below="@+id/toolbar"
+        android:id="@+id/recyclermain"
+        android:layout_width="wrap_content"
+        android:layout_height="412dp"
+        android:layout_above="@+id/llMain"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
 
         android:layout_marginTop="167dp"
-        android:layout_marginEnd="12dp" />
+        android:layout_marginBottom="@dimen/_25sdp"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="219dp"
         android:layout_height="49dp"
-
+       android:id="@+id/llMain"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
