@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         firebaseAuth=FirebaseAuth.getInstance();
+        getSupportActionBar().hide();
         if(firebaseAuth==null){
             startActivity(new Intent(MainActivity.this,login.class));
         }
