@@ -1,5 +1,6 @@
 package com.example.makechat;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewHolder> {
         holder.username.setText(users.userName);
         holder.userstatus.setText(users.status);
         Picasso.get().load(users.profilePic).into(holder.userImg);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mainActivity,chatWin.class);
+                intent.putExtra("name",users.getUserName());
+                intent.putExtra("reciverImg",users.getProfilePic());
+                intent.putExtra("uid",users.getUserId());
+                mainActivity.startActivity(intent);
+            }
+        });
 
     }
 

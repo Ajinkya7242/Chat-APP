@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1.8"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_gravity="center_vertical">
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
